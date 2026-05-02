@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
-import { Ai } from '../../services/ai';
+import { Ai } from '../services/ai';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
