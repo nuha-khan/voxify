@@ -1,0 +1,58 @@
+<div class="app">
+
+  <!-- CHAT AREA -->
+  <div class="chat-container" #chatContainer>
+
+    <div *ngFor="let msg of messages"
+     class="message"
+     [ngClass]="[msg.type, msg.loading ? 'loading' : '', 'animate']">
+
+  <!-- ✅ LOADING DOTS -->
+  <div *ngIf="msg.loading" class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- ✅ NORMAL TEXT -->
+  <div *ngIf="!msg.loading">
+    {{ msg.text }}
+  </div>
+
+</div>
+  </div>
+
+  <!-- INPUT BAR -->
+  <div class="input-bar">
+
+    <input
+      [(ngModel)]="userInput"
+      placeholder="Message Voxify..."
+      (keyup.enter)="sendMessage()"
+    />
+
+    <button type="button" (click)="sendMessage()" [disabled]="loading">
+      Send
+    </button>
+
+    <!-- ✅ MODES NOW SELECT ONLY -->
+    <div class="modes">
+      <button (click)="selectedMode='simple'"
+              [class.active]="selectedMode==='simple'">
+        Simple
+      </button>
+
+      <button (click)="selectedMode='detailed'"
+              [class.active]="selectedMode==='detailed'">
+        Detailed
+      </button>
+
+      <button (click)="selectedMode='steps'"
+              [class.active]="selectedMode==='steps'">
+        Steps
+      </button>
+    </div>
+
+  </div>
+
+</div>
