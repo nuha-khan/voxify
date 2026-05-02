@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/co
 import { Ai } from '../../services/ai';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -25,7 +26,7 @@ export class Chat {
   // ✅ NEW: chat container reference
   @ViewChild('chatContainer') chatContainer!: ElementRef;
 
-  constructor(private aiService: Ai, private cdr: ChangeDetectorRef) {}
+  constructor(private aiService: Ai, private cdr: ChangeDetectorRef, private router: Router) {}
 
   // ✅ NEW: smart scroll
   scrollToBottomIfNeeded() {
@@ -118,4 +119,7 @@ export class Chat {
       }
     });
   }
+  goHome() {
+  this.router.navigate(['/']);
+}
 }
