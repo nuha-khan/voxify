@@ -101,7 +101,7 @@ export class Chat {
         }, 0);
       },
 
-      error: (err) => {
+      error: (err: any) => {
         console.log("ERROR:", err);
 
         this.messages = this.messages.filter(m => !m.loading);
