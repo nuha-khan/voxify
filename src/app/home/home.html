@@ -1,0 +1,77 @@
+<div class="home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="title">
+  <span class="logo-icon"></span>
+  <span class="logo-text">Voxify</span>
+</h1>
+    <p class="subtitle">
+      Understand elections like never before.
+    </p>
+
+    <button mat-raised-button color="primary" class="cta" (click)="goToChat()">
+      Get Started →
+    </button>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <mat-card *ngFor="let f of features" class="feature-card">
+      <mat-card-title>{{ f.title }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ f.desc }}</p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline">
+  <h2 class="section-title">Election Process</h2>
+
+  <div class="timeline-container">
+
+    <div class="step">
+      <div class="icon">📢</div>
+      <p>Announcement</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+      <div class="icon">📝</div>
+      <p>Nomination</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+      <div class="icon">🎤</div>
+      <p>Campaign</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+      <div class="icon">🗳️</div>
+      <p>Voting</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+      <div class="icon">📊</div>
+      <p>Counting</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+      <div class="icon">🏆</div>
+      <p>Results</p>
+    </div>
+
+  </div>
+</section>
+
+</div>
