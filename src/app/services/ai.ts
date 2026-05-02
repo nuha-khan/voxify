@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Ai {
 
-  private apiUrl = 'http://localhost:3000/api/chat';
+  private apiUrl = 'https://voxify-backend-kgmo.onrender.com/api/chat';
 
   constructor(private http: HttpClient) {}
 
   generateResponse(prompt: string, mode: string) {
-  return this.http.post('http://localhost:3000/api/chat', {
+  return this.http.post(this.apiUrl, {
     prompt: prompt,
     mode: mode
   });
